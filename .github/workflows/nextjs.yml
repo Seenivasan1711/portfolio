@@ -79,10 +79,9 @@ jobs:
       #- name: Static HTML export with Next.js
       #  run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: build-artifact
-          path: .next
+          path: ./out
 
   # Deployment job
   deploy:
@@ -92,13 +91,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: build-artifact
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          deploy_dir: .next
