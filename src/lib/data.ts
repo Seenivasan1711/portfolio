@@ -39,7 +39,7 @@ export const experience: Role[] = [
       "Own release management for the team — pre-release notes, release notes, and release documentation on Confluence — and assign and coordinate implementation tasks across the team; mentor a developer intern alongside individual ownership.",
       "Own feature delivery across a provider-portal platform — bulk ordering, compliance/TOS versioning, pricing & feature flags — spanning gateway, service, and portal layers. 185+ merged PRs across 13 services.",
       "Own a patient-facing PDF report generation pipeline end to end as an Azure Function: dynamic pagination, score visualizations, and index calculations, through multiple rounds of production visual QA.",
-      "Root-caused and fixed a JMS/AMQP protocol-tier mismatch in an Azure Service Bus consumer (a Spring Cloud Azure autoconfiguration bug masking a Standard-vs-Premium tier gap) and migrated Slack alerting from webhooks to Bot Token auth.",
+      "Root-caused a protocol-version mismatch between environments in a message-queue consumer that was silently misconfigured by a library default, and migrated Slack alerting from webhooks to Bot Token auth.",
       "Extended a shared event-publishing pipeline with new event types as features shipped, and unified user-creation logic across event processors.",
     ],
   },
