@@ -3,31 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --canvas: 250 250 251;
+  --surface: 255 255 255;
+  --ink: 12 14 18;
+  --muted: 100 106 120;
+  --line: 226 228 233;
+  --accent: 63 92 255;
+  --accent-ink: 255 255 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --canvas: 8 9 11;
+  --surface: 14 16 19;
+  --ink: 240 241 244;
+  --muted: 150 156 168;
+  --line: 30 33 39;
+  --accent: 108 138 255;
+  --accent-ink: 8 9 11;
+}
+
+* {
+  border-color: rgb(var(--line));
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--canvas));
+  color: rgb(var(--ink));
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+::selection {
+  background: rgb(var(--accent) / 0.25);
+  color: rgb(var(--ink));
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-noise {
+  background-image: radial-gradient(circle at 1px 1px, rgb(var(--ink) / 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

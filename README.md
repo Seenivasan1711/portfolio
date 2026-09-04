@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Seenivasan A — Portfolio
 
-## Getting Started
+Personal portfolio site. Next.js 16 (App Router) + Tailwind CSS, statically exported and deployed to GitHub Pages.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 / React 19, static export (`output: "export"`)
+- Tailwind CSS
+- Framer Motion (scroll-triggered reveals)
+- next-themes (dark/light mode, dark by default)
+
+## Structure
+
+- `src/lib/data.ts` — all content (experience, projects, skills, achievements). Edit this file to update the site; no need to touch components for content changes.
+- `src/components/` — one component per section.
+- `public/resume/` — resume PDF served at `/resume/Seenivasan_A_Resume.pdf`. Keep in sync with the `resume-builder` repo.
+
+## Develop
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # outputs static site to ./out
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Deploys automatically to GitHub Pages via `.github/workflows/nextjs.yml` on push to `main`.
