@@ -9,13 +9,13 @@ export const profile = {
   resumeUrl: "/resume/Seenivasan_A_Resume.pdf",
   capabilities: ["Backend", "AI / Agentic Systems", "Full-Stack", "DevOps"],
   summary:
-    "I build the AI systems, not just call an API — multi-agent orchestration, LLM risk-analysis agents, and streaming AI chat, alongside 3+ years in enterprise SaaS. Already operating with lead-adjacent scope — release management, cross-team task coordination, and mentoring — on top of independently architecting and shipping 4 complete production systems solo, end to end.",
+    "I build the AI systems, not just call an API — multi-agent orchestration, LLM risk-analysis agents, and streaming AI chat, alongside 4+ years in enterprise SaaS. Already operating with lead-adjacent scope — release management, cross-team task coordination, and mentoring — on top of independently architecting and shipping 4 complete production systems solo, end to end.",
   lookingFor:
-    "Senior/Lead Software Engineer roles at established, well-resourced product companies — backend and AI systems, with room to work full-stack.",
+    "Senior/Lead Software Engineer roles — backend and AI systems, with the range to work full-stack. Open to good opportunities, wherever they come from.",
 };
 
 export const stats: { value: string; label: string }[] = [
-  { value: "3+ yrs", label: "Professional software engineering" },
+  { value: "4+ yrs", label: "Professional software engineering" },
   { value: "4", label: "AI-powered systems built" },
   { value: "185+", label: "PRs merged across 13 services" },
   { value: "9", label: "Services in my largest solo build" },
@@ -126,7 +126,7 @@ export const projects: Project[] = [
   },
   {
     name: "LogPose",
-    tagline: "Vessel daily-report viewer for maritime operations",
+    tagline: "Vessel daily-report viewer",
     description:
       "Ships' masters file Noon/Departure/Arrival reports as Excel workbooks with a manual spreadsheet-aggregation step behind them. LogPose ingests those reports directly and replaces that process with a clean, auditable, read-only view.",
     highlights: [
@@ -197,3 +197,12 @@ export const education = {
   dates: "2019 — 2023",
   detail: "CGPA: 9.3 / 10",
 };
+
+// Certifications: keep this list to courses actually marked "Complete" on the Anthropic
+// CPN dashboard. Uncomment "Building with the Claude API" once it's actually done.
+export const certifications: string[] = [
+  "Introduction to Agent Skills",
+  "Introduction to Model Context Protocol",
+  "Claude Code in Action",
+  // "Building with the Claude API",
+];

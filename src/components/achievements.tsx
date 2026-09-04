@@ -1,5 +1,5 @@
 import { Award } from "lucide-react";
-import { achievements, education } from "@/lib/data";
+import { achievements, certifications, education } from "@/lib/data";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
 
@@ -39,6 +39,18 @@ export function Achievements() {
                 <span className="text-muted">{education.dates}</span>
                 <span className="font-medium text-ink">{education.detail}</span>
               </div>
+
+              <h3 className="mt-6 border-t border-line pt-4 text-sm font-semibold uppercase tracking-wide text-muted">
+                Certifications — Anthropic
+              </h3>
+              <ul className="mt-3 space-y-2">
+                {certifications.map((c) => (
+                  <li key={c} className="flex gap-2.5 text-sm leading-relaxed text-ink">
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    <span>{c}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
         </div>
