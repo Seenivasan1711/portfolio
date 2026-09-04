@@ -186,7 +186,7 @@ export const skills: { category: string; items: string[] }[] = [
   { category: "Frontend & Mobile", items: ["React", "Redux Toolkit", "TanStack Query", "Tailwind CSS", "React Native", "Appium"] },
   {
     category: "DevOps & Data",
-    items: ["Docker", "Docker Compose", "AWS S3", "Azure Functions", "Render", "GitHub Actions CI/CD", "ShedLock", "TDD", "Elasticsearch", "TypeSense", "PostgreSQL", "MongoDB", "Redis", "Celery"],
+    items: ["Docker", "Docker Compose", "AWS S3", "Azure Functions", "Render", "GitHub Actions CI/CD", "ShedLock", "Agile/Scrum", "TypeSense", "Kibana/Elastic (log analysis)", "PostgreSQL", "MongoDB", "Redis", "Celery"],
   },
 ];
 
