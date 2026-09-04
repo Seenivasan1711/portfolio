@@ -17,7 +17,7 @@ export const profile = {
 export const stats: { value: string; label: string }[] = [
   { value: "4+ yrs", label: "Professional software engineering" },
   { value: "4", label: "AI-powered systems built" },
-  { value: "185+", label: "PRs merged across 13 services" },
+  { value: "516+", label: "High-priority tickets resolved" },
   { value: "9", label: "Services in my largest solo build" },
 ];
 
@@ -36,11 +36,11 @@ export const experience: Role[] = [
     dates: "Jun 2025 — Present",
     location: "Bangalore, India",
     bullets: [
-      "Own release management for the team — pre-release notes, release notes, and release documentation on Confluence — and assign and coordinate implementation tasks across the team; mentor a developer intern alongside individual ownership.",
+      "Own release management for the team — pre-release notes, release notes, and release documentation on Confluence — and assign and coordinate implementation tasks across the team; mentor a developer intern alongside individual ownership. 599 Jira tickets resolved, 516 high-priority.",
       "Own feature delivery across a provider-portal platform — bulk ordering, compliance/TOS versioning, pricing & feature flags — spanning gateway, service, and portal layers. 185+ merged PRs across 13 services.",
-      "Own a patient-facing PDF report generation pipeline end to end as an Azure Function: dynamic pagination, score visualizations, and index calculations, through multiple rounds of production visual QA.",
+      "Own a patient-facing PDF report generation pipeline end to end as an Azure Function; root-caused and fixed a cross-instance race condition causing lost writes under concurrent updates, moving from a pessimistic lock to a lock-free atomic update after diagnosing contention in production.",
       "Root-caused a protocol-version mismatch between environments in a message-queue consumer that was silently misconfigured by a library default, and migrated Slack alerting from webhooks to Bot Token auth.",
-      "Extended a shared event-publishing pipeline with new event types as features shipped, and unified user-creation logic across event processors.",
+      "Streamlined a multi-replica scheduled job using ShedLock for single-run guarantees across instances, adding retry-tracked dispatch metadata and a version-gated rollout flag for safe migration.",
     ],
   },
   {
@@ -150,6 +150,20 @@ export const projects: Project[] = [
     links: [{ label: "Source", href: "https://github.com/Seenivasan1711/xillion" }],
   },
   {
+    name: "Time2Crack",
+    tagline: "AI-assisted e-commerce platform",
+    description:
+      "A full-stack e-commerce platform built end to end — product concept from a friend, engineering solo. Kafka-scheduled delivery, Redis caching, and an OpenAI-backed shopping assistant sit behind a production-shaped React frontend.",
+    highlights: [
+      "Node/Express backend with JWT auth, product catalog, and cart/order management on PostgreSQL + Sequelize",
+      "Kafka-driven scheduled delivery system, decoupled from the request path",
+      "OpenAI-backed FAQ and product-recommendation features",
+      "Dockerized with CI/CD via GitHub Actions",
+    ],
+    stack: ["Node.js", "Express", "PostgreSQL", "Redis", "Kafka", "React", "TypeScript"],
+    links: [{ label: "Source", href: "https://github.com/Seenivasan1711/Time2Crack" }],
+  },
+  {
     name: "Nebula",
     tagline: "Personal multi-agent AI system (in progress)",
     description:
@@ -171,7 +185,7 @@ export const skills: { category: string; items: string[] }[] = [
   { category: "Frontend & Mobile", items: ["React", "Redux Toolkit", "TanStack Query", "Tailwind CSS", "React Native"] },
   {
     category: "DevOps & Data",
-    items: ["Docker", "Docker Compose", "Render", "GitHub Actions CI/CD", "PostgreSQL", "MongoDB", "Redis", "Celery"],
+    items: ["Docker", "Docker Compose", "Render", "GitHub Actions CI/CD", "ShedLock", "PostgreSQL", "MongoDB", "Redis", "Celery"],
   },
 ];
 
@@ -198,11 +212,9 @@ export const education = {
   detail: "CGPA: 9.3 / 10",
 };
 
-// Certifications: keep this list to courses actually marked "Complete" on the Anthropic
-// CPN dashboard. Uncomment "Building with the Claude API" once it's actually done.
 export const certifications: string[] = [
   "Introduction to Agent Skills",
   "Introduction to Model Context Protocol",
   "Claude Code in Action",
-  // "Building with the Claude API",
+  "Building with the Claude API",
 ];
