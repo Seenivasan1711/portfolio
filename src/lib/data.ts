@@ -111,6 +111,10 @@ export const projects: Project[] = [
       "Multi-tenant JWT auth with a superadmin impersonation header, and per-tenant LLM API keys encrypted at rest",
     ],
     stack: ["FastAPI", "LangGraph", "OR-Tools", "React", "Celery", "MongoDB"],
+    links: [
+      { label: "Backend", href: "https://github.com/Seenivasan1711/FleetOpsX-API" },
+      { label: "Frontend", href: "https://github.com/Seenivasan1711/FleetOpsX-UI" },
+    ],
     featured: true,
   },
   {
@@ -181,12 +185,12 @@ export const skills: { category: string; items: string[] }[] = [
   },
   {
     category: "Backend",
-    items: ["Java", "Python", "Node.js / TypeScript", "FastAPI", "NestJS", "Spring-based services", "REST APIs", "GraphQL", "JWT / OAuth2"],
+    items: ["Java", "Python", "Node.js / TypeScript", "FastAPI", "NestJS", "Spring-based services", "REST APIs", "GraphQL", "JWT / OAuth2", "JUnit", "Mockito", "pytest"],
   },
-  { category: "Frontend & Mobile", items: ["React", "Redux Toolkit", "TanStack Query", "Tailwind CSS", "React Native", "Appium"] },
+  { category: "Frontend & Mobile", items: ["React", "Redux Toolkit", "TanStack Query", "Tailwind CSS", "React Native", "Appium", "Vitest", "React Testing Library"] },
   {
     category: "DevOps & Data",
-    items: ["Docker", "Docker Compose", "AWS S3", "Azure Functions", "Render", "GitHub Actions CI/CD", "ShedLock", "Agile/Scrum", "TypeSense", "Kibana/Elastic (log analysis)", "PostgreSQL", "MongoDB", "Redis", "Celery"],
+    items: ["Docker", "Docker Compose", "AWS S3", "Azure Functions", "Render", "GitHub Actions CI/CD", "ShedLock", "Agile/Scrum", "TypeSense", "Kibana/Elastic (log analysis)", "Selenium", "Postman", "PostgreSQL", "MongoDB", "Redis", "Celery"],
   },
 ];
 
