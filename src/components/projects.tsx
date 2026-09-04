@@ -94,7 +94,7 @@ function ProjectCard({ project, large = false }: { project: Project; large?: boo
           </ul>
         )}
 
-        <div className="mt-5 flex flex-1 flex-wrap items-end gap-2">
+        <div className="mt-5 flex flex-1 flex-wrap content-end gap-2">
           {project.stack.map((tech) => (
             <span
               key={tech}
