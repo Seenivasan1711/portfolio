@@ -1,23 +1,23 @@
 export const profile = {
   name: "Seenivasan A",
   role: "Senior Software Engineer",
-  tagline: "Backend & AI Systems Engineer — full-stack and DevOps range",
+  tagline: "Full-Stack, Java & AI Systems Engineer",
   location: "Bangalore, India",
   email: "as17112001@gmail.com",
   github: "https://github.com/Seenivasan1711",
   linkedin: "https://www.linkedin.com/in/seenivasan-a-165a32193/",
   resumeUrl: "/resume/Seenivasan_A_Resume.pdf",
-  capabilities: ["Backend", "AI / Agentic Systems", "Full-Stack", "DevOps"],
+  capabilities: ["Full-Stack", "Backend", "AI / Agentic Systems", "DevOps"],
   summary:
-    "I build the AI systems, not just call an API — multi-agent orchestration, LLM risk-analysis agents, and streaming AI chat, alongside 4+ years in enterprise SaaS. Already operating with lead-adjacent scope — release management, cross-team task coordination, and mentoring — on top of independently architecting and shipping 4 complete production systems solo, end to end.",
+    "Full-stack engineer with 4+ years building distributed, scalable, reliable systems in enterprise SaaS — Java and React day to day, Python for the AI work. Shipped GenAI features to production on Google Gemini, built multi-agent orchestration with LangGraph, an LLM risk-analysis agent, and streaming AI chat. Now running release management, cross-team coordination and mentoring alongside a full delivery load.",
   lookingFor:
-    "Senior/Lead Software Engineer roles — backend and AI systems, with the range to work full-stack. Open to good opportunities, wherever they come from.",
+    "Senior/Lead Software Engineer roles — full-stack, Java and AI systems. Open to good opportunities, wherever they come from.",
 };
 
 export const stats: { value: string; label: string }[] = [
   { value: "4+ yrs", label: "Professional software engineering" },
   { value: "4", label: "AI-powered systems built" },
-  { value: "516+", label: "High-priority tickets resolved" },
+  { value: "100+", label: "Provider organizations served (Viome)" },
   { value: "9", label: "Services in my largest solo build" },
 ];
 
@@ -36,11 +36,12 @@ export const experience: Role[] = [
     dates: "Jun 2025 — Present",
     location: "Bangalore, India",
     bullets: [
-      "Own release management for the team — pre-release notes, release notes, and release documentation on Confluence — and assign and coordinate implementation tasks across the team; mentor a developer intern alongside individual ownership. 599 Jira tickets resolved, 516 high-priority.",
-      "Own feature delivery across a provider-portal platform — bulk ordering, compliance/TOS versioning, pricing & feature flags — spanning gateway, service, and portal layers. 185+ merged PRs across 13 services.",
-      "Own a patient-facing PDF report generation pipeline end to end as an Azure Function; root-caused and fixed a cross-instance race condition causing lost writes under concurrent updates, moving from a pessimistic lock to a lock-free atomic update after diagnosing contention in production.",
-      "Root-caused a protocol-version mismatch between environments in a message-queue consumer that was silently misconfigured by a library default, and migrated Slack alerting from webhooks to Bot Token auth.",
-      "Streamlined a multi-replica scheduled job using ShedLock for single-run guarantees across instances, adding retry-tracked dispatch metadata and a version-gated rollout flag for safe migration.",
+      "Own release management for the team on a weekly sprint cadence — release notes and documentation on Confluence, cross-team task coordination via Jira — while mentoring and reviewing code for a developer intern, and carrying a full feature load.",
+      "Deliver features across a provider-portal platform — bulk ordering, compliance/TOS versioning, pricing & feature flags — spanning gateway, service, and portal layers across 13 microservices serving 100+ provider organizations.",
+      "Own a patient-facing PDF report generation pipeline end to end as an Azure Function. Identified a concurrency bottleneck — a cross-instance race condition causing lost writes under concurrent updates — and rebuilt it from a pessimistic lock into a lock-free atomic update.",
+      "Diagnosed a protocol-version mismatch between environments in a message-queue consumer, silently misconfigured by a library default, and resolved it — the consumer stopped failing intermittently.",
+      "Noticed from logs, not a reported incident, that a scheduled job was firing on every replica instead of once. Fixed it with ShedLock for single-run guarantees, adding retry-tracked dispatch metadata and a version-gated rollout flag.",
+      "Extended a shared event-publishing pipeline as new features shipped — bulk orders, online agreements, sample reissue, result releases — and unified user-creation logic across multiple event processors.",
     ],
   },
   {
@@ -49,19 +50,19 @@ export const experience: Role[] = [
     dates: "Sep 2023 — May 2025",
     location: "Bangalore, India",
     bullets: [
-      "Developed and optimized core platform features including AI-powered visual regression testing, Figma-based UI validation, and the Export Management module.",
-      "Created and deployed a custom React Native Android app (SMS Forwarder) for enterprise automation use cases.",
-      "Handled 200+ critical production issues and led multiple root cause analyses, improving product reliability and customer satisfaction.",
+      "Shipped a GenAI visual-regression-testing feature on Google Gemini 2.0 Flash — built the backend AI service and a Python suggestion engine using prompt chaining, gated to paid-tier organizations with per-org configuration, and integrated both into the product's AI Insights UI.",
+      "Owned core parts of the Java and Spring Boot test-execution engine — GraphQL/REST API testing and cross-cloud device support through BrowserStack, SauceLabs and LambdaTest — and built infinite-scroll result views and TypeSense-backed search on the Redux-driven React/TypeScript frontend as ownership moved off a legacy Angular app.",
+      "Cut recurring production defects by introducing Redis-backed distributed locking for visual-regression result writes, and ran Helm-based CI/CD release deployments across 5 platform services.",
     ],
   },
   {
-    title: "Developer Intern",
+    title: "Graduate Trainee",
     company: "Testsigma Technologies",
     dates: "May 2022 — Aug 2023",
     location: "Bangalore, India",
     bullets: [
-      "Built internal test platforms including a Flight Booking Application (ReactJS + Spring Boot) for validating automation workflows.",
-      "Developed Simply Travel mobile apps (Android/iOS) in React Native, integrating APIs, local storage, and UI components.",
+      "Built a full-stack flight-booking demo app end to end: React Native with Spring Boot and MySQL, JWT auth, and dynamic multi-city search through JPA specifications. Testsigma adopted it as its reference app for product demos and tutorials.",
+      "Developed the Simply Travel mobile apps for Android and iOS in React Native, integrating APIs, local storage and UI components.",
     ],
   },
 ];
@@ -176,16 +177,16 @@ export const projects: Project[] = [
 export const skills: { category: string; items: string[] }[] = [
   {
     category: "AI & Agentic Systems",
-    items: ["LangChain / LangGraph", "OR-Tools", "Claude / Gemini / OpenAI", "LLM Risk Analysis", "SSE-Streamed AI Chat"],
+    items: ["LangChain / LangGraph", "OR-Tools", "Claude / Gemini / OpenAI", "LLM Risk Analysis", "SSE-Streamed AI Chat", "Qdrant"],
   },
   {
     category: "Backend",
-    items: ["Java", "Python", "Node.js / TypeScript", "FastAPI", "NestJS", "Spring-based services", "REST APIs", "JWT / OAuth2"],
+    items: ["Java", "Python", "Node.js / TypeScript", "FastAPI", "NestJS", "Spring-based services", "REST APIs", "GraphQL", "JWT / OAuth2"],
   },
-  { category: "Frontend & Mobile", items: ["React", "Redux Toolkit", "TanStack Query", "Tailwind CSS", "React Native"] },
+  { category: "Frontend & Mobile", items: ["React", "Redux Toolkit", "TanStack Query", "Tailwind CSS", "React Native", "Appium"] },
   {
     category: "DevOps & Data",
-    items: ["Docker", "Docker Compose", "Render", "GitHub Actions CI/CD", "ShedLock", "PostgreSQL", "MongoDB", "Redis", "Celery"],
+    items: ["Docker", "Docker Compose", "AWS S3", "Azure Functions", "Render", "GitHub Actions CI/CD", "ShedLock", "TDD", "Elasticsearch", "TypeSense", "PostgreSQL", "MongoDB", "Redis", "Celery"],
   },
 ];
 
@@ -207,7 +208,7 @@ export const achievements = [
 export const education = {
   degree: "B.E., Electronics and Communication Engineering",
   school: "Sri Venkateswara College of Engineering",
-  location: "Kancheepuram, Tamil Nadu",
+  location: "Chennai, Tamil Nadu",
   dates: "2019 — 2023",
   detail: "CGPA: 9.3 / 10",
 };
