@@ -11,6 +11,9 @@ export function Footer() {
           <h2 className="mt-3 max-w-xl text-balance text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
             Open to interesting problems and the teams solving them.
           </h2>
+          <p className="mt-4 max-w-xl text-balance text-muted">
+            <span className="font-medium text-ink">Currently looking for:</span> {profile.lookingFor}
+          </p>
           <a
             href={`mailto:${profile.email}`}
             className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-ink transition-colors hover:text-accent sm:text-2xl"

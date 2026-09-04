@@ -16,7 +16,7 @@ export function Projects() {
           description="Independent projects — architected, built, and deployed solo, from data model to production."
         />
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
           {featured.map((project, i) => (
             <Reveal key={project.name} delay={i * 0.08}>
               <ProjectCard project={project} large />
@@ -24,7 +24,7 @@ export function Projects() {
           ))}
         </div>
 
-        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {rest.map((project, i) => (
             <Reveal key={project.name} delay={i * 0.06}>
               <ProjectCard project={project} />
@@ -36,40 +36,74 @@ export function Projects() {
   );
 }
 
+function ProjectImage({ project }: { project: Project }) {
+  if (project.image) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={project.image} alt={`${project.name} screenshot`} className="h-full w-full object-cover" />;
+  }
+  return (
+    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/10 via-transparent to-accent/5">
+      <span className="text-2xl font-semibold tracking-tight text-accent/40">{project.name}</span>
+    </div>
+  );
+}
+
 function ProjectCard({ project, large = false }: { project: Project; large?: boolean }) {
   return (
-    <article
-      className={`group flex h-full flex-col rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-accent/60 ${
-        large ? "sm:p-7" : ""
-      }`}
-    >
-      <div className="flex items-start justify-between gap-4">
-        <h3 className={`font-semibold tracking-tight text-ink ${large ? "text-xl" : "text-lg"}`}>
-          {project.name}
-        </h3>
-        {project.links?.[0] && (
-          <a
-            href={project.links[0].href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${project.name} - ${project.links[0].label}`}
-            className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-muted transition-colors group-hover:text-accent"
-          >
-            <ArrowUpRight size={16} />
-          </a>
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-accent/60">
+      {large && (
+        <div className="aspect-[16/8] w-full overflow-hidden border-b border-line">
+          <ProjectImage project={project} />
+        </div>
+      )}
+      <div className={large ? "flex flex-1 flex-col p-6 sm:p-7" : "flex flex-1 flex-col p-6"}>
+        <div className="flex items-start justify-between gap-4">
+          <h3 className={`font-semibold tracking-tight text-ink ${large ? "text-xl" : "text-lg"}`}>
+            {project.name}
+          </h3>
+          <div className="flex items-center gap-2">
+            {project.status && (
+              <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
+                {project.status}
+              </span>
+            )}
+            {project.links?.[0] && (
+              <a
+                href={project.links[0].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.name} - ${project.links[0].label}`}
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-muted transition-colors group-hover:text-accent"
+              >
+                <ArrowUpRight size={16} />
+              </a>
+            )}
+          </div>
+        </div>
+        <p className="mt-1 text-sm font-medium text-accent">{project.tagline}</p>
+        <p className="mt-3 text-sm leading-relaxed text-muted">{project.description}</p>
+
+        {project.highlights && (
+          <ul className="mt-4 space-y-2">
+            {project.highlights.map((h) => (
+              <li key={h} className="flex gap-2.5 text-sm leading-relaxed text-muted">
+                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent/60" />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
         )}
-      </div>
-      <p className="mt-1 text-sm font-medium text-accent">{project.tagline}</p>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{project.description}</p>
-      <div className="mt-5 flex flex-wrap gap-2">
-        {project.stack.map((tech) => (
-          <span
-            key={tech}
-            className="rounded-full border border-line px-2.5 py-1 text-xs text-muted"
-          >
-            {tech}
-          </span>
-        ))}
+
+        <div className="mt-5 flex flex-1 flex-wrap items-end gap-2">
+          {project.stack.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-line px-2.5 py-1 text-xs text-muted"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
     </article>
   );

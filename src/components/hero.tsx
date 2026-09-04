@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/lib/data";
 
 export function Hero() {
@@ -24,7 +24,7 @@ export function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 text-xs text-muted"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          Software Engineer · Bangalore, India
+          Open to Senior / Lead opportunities · {profile.location}
         </motion.div>
 
         <motion.h1
@@ -33,13 +33,38 @@ export function Hero() {
           transition={{ duration: 0.65, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-3xl text-balance text-4xl font-semibold tracking-tight text-ink sm:text-5xl md:text-6xl"
         >
-          {profile.tagline}
+          {profile.role}
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-3 max-w-2xl text-balance text-lg font-medium text-accent sm:text-xl"
+        >
+          {profile.tagline}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-6 flex flex-wrap gap-2"
+        >
+          {profile.capabilities.map((cap) => (
+            <span
+              key={cap}
+              className="rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted"
+            >
+              {cap}
+            </span>
+          ))}
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.65, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted sm:text-lg"
         >
           {profile.summary}
@@ -48,7 +73,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.65, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <a
@@ -57,6 +82,15 @@ export function Hero() {
           >
             View selected work
             <ArrowUpRight size={15} />
+          </a>
+          <a
+            href={profile.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent"
+          >
+            Resume
+            <Download size={14} />
           </a>
           <a
             href="#contact"
