@@ -38,9 +38,9 @@ export const experience: Role[] = [
     bullets: [
       "Own release management for the team on a weekly sprint cadence — release notes and documentation on Confluence, cross-team task coordination via Jira — while mentoring and reviewing code for a developer intern, and carrying a full feature load.",
       "Deliver features across a provider-portal platform — bulk ordering, compliance/TOS versioning, pricing & feature flags — spanning gateway, service, and portal layers across 13 microservices serving 100+ provider organizations.",
-      "Own a patient-facing PDF report generation pipeline end to end as an Azure Function. Identified a concurrency bottleneck — a cross-instance race condition causing lost writes under concurrent updates — and rebuilt it from a pessimistic lock into a lock-free atomic update.",
+      "Own a patient-facing PDF report generation pipeline end to end as an Azure Function. Identified a concurrency bottleneck — a cross-instance race condition causing lost writes under concurrent updates — and rebuilt it from a pessimistic lock into a lock-free atomic update, eliminating the write conflicts.",
       "Diagnosed a protocol-version mismatch between environments in a message-queue consumer, silently misconfigured by a library default, and resolved it — the consumer stopped failing intermittently.",
-      "Noticed from logs, not a reported incident, that a scheduled job was firing on every replica instead of once. Fixed it with ShedLock for single-run guarantees, adding retry-tracked dispatch metadata and a version-gated rollout flag.",
+      "Noticed from logs, not a reported incident, that a scheduled job was firing on every replica instead of once. Fixed it with ShedLock for single-run guarantees, eliminating the duplicates, plus retry-tracked dispatch metadata and a version-gated rollout flag.",
       "Extended a shared event-publishing pipeline as new features shipped — bulk orders, online agreements, sample reissue, result releases — and unified user-creation logic across multiple event processors.",
     ],
   },
@@ -205,7 +205,7 @@ export const achievements = [
     title: "2nd Place, AI Hackathon 2024",
     meta: "Testsigma",
     description:
-      "Built an AI-powered load-testing tool using OpenAI models for dynamic API test-data generation and criticality-based test prioritization.",
+      "Built an AI-powered load-testing tool (OpenAI) generating dynamic test data, prioritised by criticality.",
   },
 ];
 
