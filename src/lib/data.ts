@@ -37,11 +37,12 @@ export const experience: Role[] = [
     location: "Bangalore, India",
     bullets: [
       "Own release management for the team on a weekly sprint cadence — release notes and documentation on Confluence, cross-team task coordination via Jira — while mentoring and reviewing code for a developer intern, and carrying a full feature load.",
-      "Deliver features across a provider-portal platform — bulk ordering, compliance/TOS versioning, pricing & feature flags — spanning gateway, service, and portal layers across 13 microservices serving 100+ provider organizations.",
+      "Deliver features across a provider-portal platform — bulk ordering, compliance/TOS versioning, pricing & feature flags — spanning gateway, service, and portal layers across 13 microservices serving 100+ provider organizations. Refactored authorization from scattered service-layer checks into a single cached RBAC annotation, cutting ~750 lines of duplicated logic.",
+      "Introduced a spec-driven development workflow (structured design/test specs) now adopted by 4 other engineers across 90+ specs, plus two custom Claude Code skills automating release-notes and pre-release notices.",
       "Own a patient-facing PDF report generation pipeline end to end as an Azure Function. Identified a concurrency bottleneck — a cross-instance race condition causing lost writes under concurrent updates — and rebuilt it from a pessimistic lock into a lock-free atomic update, eliminating the write conflicts.",
       "Diagnosed a protocol-version mismatch between environments in a message-queue consumer, silently misconfigured by a library default, and resolved it — the consumer stopped failing intermittently.",
-      "Noticed from logs, not a reported incident, that a scheduled job was firing on every replica instead of once. Fixed it with ShedLock for single-run guarantees, eliminating the duplicates, plus retry-tracked dispatch metadata and a version-gated rollout flag.",
-      "Extended a shared event-publishing pipeline as new features shipped — bulk orders, online agreements, sample reissue, result releases — and unified user-creation logic across multiple event processors.",
+      "Noticed from logs, not a reported incident, that a scheduled job was firing on every replica instead of once. Fixed it with ShedLock plus a retryable dispatch pipeline; separately root-caused a notification fan-out bug and rebuilt it on independent async sends, backed by 31 new unit tests.",
+      "Led a Shopify B2B bulk-order integration end to end — draft-order creation, fulfillment tracking, NET-terms/payment-terms support — as primary owner of the order service across a 7-month span.",
     ],
   },
   {
@@ -51,8 +52,7 @@ export const experience: Role[] = [
     location: "Bangalore, India",
     bullets: [
       "Shipped a GenAI visual-regression-testing feature on Google Gemini 2.0 Flash — built the backend AI service and a Python suggestion engine using prompt chaining, gated to paid-tier organizations with per-org configuration, and integrated both into the product's AI Insights UI.",
-      "Owned core parts of the Java and Spring Boot test-execution engine — GraphQL/REST API testing and cross-cloud device support through BrowserStack, SauceLabs and LambdaTest — and built infinite-scroll result views and TypeSense-backed search on the Redux-driven React/TypeScript frontend as ownership moved off a legacy Angular app.",
-      "Cut recurring production defects by introducing Redis-backed distributed locking for visual-regression result writes, and ran Helm-based CI/CD release deployments across 5 platform services.",
+      "Owned core parts of the Java and Spring Boot test-execution engine — GraphQL/REST API testing and cross-cloud device support through BrowserStack, SauceLabs and LambdaTest — and built infinite-scroll result views and TypeSense-backed search on the Redux-driven React/TypeScript frontend as ownership moved off a legacy Angular app. Cut recurring production defects with Redis-backed distributed locking for result writes, and ran Helm-based CI/CD across 5 platform services.",
     ],
   },
   {
